@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emberfall — Duel of the Four Sparks</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- Title screen -->
+  <section id="screen-title" class="screen">
+    <div class="fan" aria-hidden="true">
+      <div class="fan-card suit-flame">▲</div>
+      <div class="fan-card suit-tide">●</div>
+      <div class="fan-card suit-thorn">◆</div>
+      <div class="fan-card suit-gloom">☾</div>
+    </div>
+    <h1 class="logo">EMBERFALL</h1>
+    <p class="tagline">Duel of the Four Sparks — a card duel against the Ashen Warden</p>
+    <div class="howto">
+      <p><strong>Burn the Warden from 22 life to 0 before your own 20 fade.</strong></p>
+      <p>Each turn your ember grows and refills. Play cards to strike, guard, mend and scheme.
+         Play two cards of a suit in a row and the second is <em>Kindled</em> — stronger.</p>
+      <p>The Warden <strong>telegraphs its next play</strong> in the red banner. Read it, and answer it:
+         raise Guard against a Strike, out-race a Ward, leech back a Leech.</p>
+    </div>
+    <button id="btn-start" class="big-btn">Enter the Duel</button>
+    <p class="suits-line">
+      <span class="s-flame">▲ Flame burns</span> ·
+      <span class="s-tide">● Tide mends</span> ·
+      <span class="s-thorn">◆ Thorn guards</span> ·
+      <span class="s-gloom">☾ Gloom drains</span>
+    </p>
+  </section>
+
+  <!-- The table -->
+  <section id="screen-table" class="screen hidden">
+    <div id="warden-zone" class="zone">
+      <div class="medallion warden-face">♞</div>
+      <div id="warden-stats" class="stats"></div>
+      <div id="warden-hand" class="hand backs"></div>
+    </div>
+
+    <div id="intent-banner" class="intent"></div>
+
+    <div id="table-mid">
+      <div id="turn-banner"></div>
+      <div id="stage"></div>
+      <div id="log"></div>
+    </div>
+
+    <div id="player-zone" class="zone">
+      <div class="medallion player-face">✹</div>
+      <div id="player-stats" class="stats"></div>
+      <button id="btn-end" class="big-btn small">End Turn</button>
+      <div id="player-hand" class="hand"></div>
+    </div>
+  </section>
+
+  <!-- End screen -->
+  <section id="screen-end" class="screen hidden">
+    <div id="confetti" aria-hidden="true"></div>
+    <h1 id="end-title"></h1>
+    <p id="end-sub"></p>
+    <p id="end-stats"></p>
+    <button id="btn-again" class="big-btn">Duel Again</button>
+  </section>
+
+</div>
+<div id="fx-layer" aria-hidden="true"></div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
